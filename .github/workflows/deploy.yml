@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm ci  # Or 'npm install' if you prefer
 
-      # 4. Fix permissions on vite binary
+      # 4. Fix permissions on Vite binary
       - name: Fix permissions on Vite binary
         run: chmod +x node_modules/.bin/vite
 
@@ -32,9 +32,9 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      # 6. Deploy to GitHub Pages
+      # 6. Deploy to GitHub Pages (with correct permissions)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token
           publish_dir: ./build  # Adjust this if your build folder is different
