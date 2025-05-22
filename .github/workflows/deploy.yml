@@ -25,7 +25,7 @@ jobs:
 
       # 3. Install dependencies
       - name: Install dependencies
-        run: npm ci  # or 'npm install'
+        run: npm install # or 'npm install'
 
       # 4. Fix permissions on Vite binary
       - name: Fix permissions on Vite binary
